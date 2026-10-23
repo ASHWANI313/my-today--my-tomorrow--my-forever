@@ -1,10 +1,7 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Today, My Tomorrow, My Forever ❤️</title>
 
 <style>
@@ -39,7 +36,7 @@ body {
   animation: floatUp 12s linear infinite;
 }
 
-.hearts span:nth-child(1) { left: 8%; animation-delay: 0s; }
+.hearts span:nth-child(1) { left: 8%; }
 .hearts span:nth-child(2) { left: 24%; animation-delay: 3s; }
 .hearts span:nth-child(3) { left: 45%; animation-delay: 6s; }
 .hearts span:nth-child(4) { left: 65%; animation-delay: 1s; }
@@ -51,9 +48,7 @@ body {
     transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
-  15% {
-    opacity: 0.55;
-  }
+  15% { opacity: 0.55; }
   100% {
     transform: translateY(-115vh) rotate(35deg);
     opacity: 0;
@@ -97,7 +92,7 @@ h1 {
   width: 100%;
   height: auto;
   max-height: 520px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 18px;
 }
 
@@ -113,7 +108,7 @@ h1 {
   margin: 30px auto;
   padding: clamp(22px, 5vw, 40px);
   text-align: left;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid #ffd0df;
   border-radius: 22px;
   box-shadow: 0 8px 30px rgba(151, 27, 76, 0.08);
@@ -196,16 +191,10 @@ footer {
     My Queen &amp; My Forever ❤️👑💍
   </h1>
 
-  <p class="subtitle">
-    Priyanka, you make my today beautiful,
-    my tomorrow hopeful, and my forever worth dreaming of. ❤️
-  </p>
+  <p class="subtitle"></p>
 
   <div class="photo-frame">
-    <img
-      src="PASTE_YOUR_PHOTO_BASE64_DATA_HERE"
-      alt="My beautiful queen Priyanka"
-    >
+    <img src="priyanka%20_angry.jpeg" alt="My beautiful queen Priyanka">
   </div>
 
   <div class="caption">
@@ -214,7 +203,7 @@ footer {
 
   <section class="message">
 
-    <p>My dearest Priyanka, ❤️</p>
+    <p></p>
 
     <p>
       Happy Birthday to the person who holds such a special
@@ -258,13 +247,10 @@ footer {
 
   </section>
 
-  <button
-    type="button"
-    onclick="
+  <button id="surpriseButton" type="button" onclick="
       document.getElementById('surprise').style.display = 'block';
       this.style.display = 'none';
-    "
-  >
+    ">
     Open One Last Surprise 💌
   </button>
 
@@ -301,5 +287,7 @@ footer {
 
 </main>
 
-</body>
-</html>
+
+
+
+</body></html>
