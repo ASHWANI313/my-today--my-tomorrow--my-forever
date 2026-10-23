@@ -1,238 +1,305 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Birthday, My Queen ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Today, My Tomorrow, My Forever ❤️</title>
+
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- font-family:Georgia,serif;
- color:#68283f;
- background:linear-gradient(160deg,#fff9fb,#ffe0eb);
- text-align:center;
- overflow-x:hidden;
+* {
+  box-sizing: border-box;
 }
-.container{max-width:720px;width:92%;margin:auto;padding:32px 0 45px}
-.small{
- font:12px Arial,sans-serif;
- letter-spacing:3px;
- color:#a35b73;
- line-height:1.8;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #571a35;
+  background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
+  text-align: center;
+  overflow-x: hidden;
 }
-h1{font-size:clamp(35px,8vw,58px);font-weight:normal;color:#b83260;line-height:1.2}
-h2{font-size:clamp(27px,6vw,38px);font-weight:normal;color:#b83260;line-height:1.4}
-p{font-size:17px;line-height:1.9}
-.photo-frame{
- width:min(310px,85%);
- margin:25px auto;
- padding:9px;
- background:white;
- border-radius:170px 170px 25px 25px;
- box-shadow:0 12px 35px #a82f5825;
- border:1px solid #f4c3d3;
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
-.photo-frame img{
- width:100%;
- height:390px;
- object-fit:cover;
- object-position:center 30%;
- border-radius:160px 160px 18px 18px;
- display:block;
+
+.hearts span {
+  position: absolute;
+  bottom: -60px;
+  color: #ff5285;
+  opacity: 0.55;
+  font-size: 28px;
+  animation: floatUp 12s linear infinite;
 }
-.card{
- background:#ffffffd9;
- border:1px solid #f4c5d4;
- border-radius:24px;
- padding:28px 22px;
- margin-top:25px;
- box-shadow:0 12px 35px #9e315012;
+
+.hearts span:nth-child(1) { left: 8%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 24%; animation-delay: 3s; }
+.hearts span:nth-child(3) { left: 45%; animation-delay: 6s; }
+.hearts span:nth-child(4) { left: 65%; animation-delay: 1s; }
+.hearts span:nth-child(5) { left: 82%; animation-delay: 4s; }
+.hearts span:nth-child(6) { left: 94%; animation-delay: 7s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-115vh) rotate(35deg);
+    opacity: 0;
+  }
 }
-.answer{
- text-align:left;
- background:#fff3f7;
- border-left:3px solid #df91ad;
- border-radius:0 12px 12px 0;
- padding:14px 17px;
- margin:17px 0;
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(900px, 92%);
+  margin: auto;
+  padding: 38px 0 45px;
 }
-.answer h3{
- font: bold 12px/1.7 Arial,sans-serif;
- color:#a13c60;
- letter-spacing:.5px;
+
+h1 {
+  color: #8d1749;
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1.2;
+  margin: 20px 0;
 }
-.answer p{font-size:16px;margin-bottom:0}
-.wedding{
- margin-top:25px;
- padding:25px 14px;
- border-radius:18px;
- background:#b83260;
- color:white;
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  line-height: 1.8;
 }
-.wedding p{font-size:20px}
-button{
- border:0;
- border-radius:30px;
- padding:15px 22px;
- background:#b83260;
- color:white;
- font-size:15px;
- cursor:pointer;
- margin-top:20px;
+
+.photo-frame {
+  width: min(340px, 85vw);
+  margin: 28px auto;
+  padding: 9px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, white, #ffb6ce, white);
+  box-shadow: 0 12px 35px rgba(151, 27, 76, 0.2);
+  transform: rotate(-1deg);
 }
-#surprise{
- display:none;
- font-size:19px;
- line-height:1.9;
- color:#b83260;
- margin-top:25px;
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: 18px;
 }
-footer{padding:25px 8px;color:#a35b73;line-height:1.9}
-.heart{
- position:fixed;
- bottom:-35px;
- color:#d84f78;
- opacity:.55;
- pointer-events:none;
- animation:floatUp 10s linear infinite;
+
+.caption {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #a52d5d;
 }
-@keyframes floatUp{
- to{transform:translateY(-110vh) rotate(25deg);opacity:0}
+
+.message {
+  max-width: 760px;
+  margin: 30px auto;
+  padding: clamp(22px, 5vw, 40px);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ffd0df;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(151, 27, 76, 0.08);
+  font-size: 1.08rem;
+  line-height: 1.9;
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation:none!important}
+
+.message p {
+  margin: 0 0 17px;
+}
+
+.message p:last-child {
+  margin-bottom: 0;
+}
+
+.wedding-date {
+  text-align: center;
+  color: #a21e55;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+button {
+  border: none;
+  border-radius: 50px;
+  padding: 15px 26px;
+  margin: 12px 0;
+  background: linear-gradient(135deg, #ff6495, #c52565);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 7px 20px rgba(197, 37, 101, 0.25);
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+#surprise {
+  display: none;
+  max-width: 720px;
+  margin: 25px auto;
+  padding: 25px;
+  background: white;
+  border: 1px solid #ffd0df;
+  border-radius: 22px;
+  line-height: 1.9;
+  box-shadow: 0 8px 25px rgba(151, 27, 76, 0.1);
+}
+
+#surprise h2 {
+  color: #a21e55;
+}
+
+footer {
+  margin-top: 35px;
+  color: #98516e;
+  font-size: 0.95rem;
 }
 </style>
 </head>
+
 <body>
-<div class="container">
 
- <div class="small">A LITTLE SURPRISE MADE JUST FOR YOU</div>
- <div style="font-size:42px;margin-top:22px">❤️</div>
-
- <h1>To My Queen,<br>My Love, My Forever</h1>
-
- <div class="photo-frame">
-   <img src="priyanka.jpg"
-        alt="My beautiful queen Priyanka">
- </div>
-
- <div class="small">MY FAVOURITE PERSON. MY FOREVER. ❤️</div>
-
- <div class="card">
-   <h2>Happy Birthday,<br>
-   My Love, My Queen<br>
-   &amp; My Forever ❤️👑💍</h2>
-
-   <p>
-     Happy Birthday to the most special person in my life.
-     You bring happiness into my world, and knowing that
-     I get to spend my life with you is one of my greatest
-     blessings. ❤️
-   </p>
-
-   <p>
-     Baby, I wish you endless happiness, good health,
-     success, peace, and a thousand reasons to smile.
-     You deserve all the beautiful things life has to offer.
-   </p>
-
-   <p>
-     And my love, February 10 is getting closer! 💍
-     Very soon, we won't have to count the days until
-     we're together. I can't wait to hold your hand,
-     call you my wife, build our little world, and create
-     beautiful memories with you.
-   </p>
-
-   <p>
-     Our forever is almost here, my queen.
-     Until then, remember that you have my whole heart.
-     I love you more than words can ever explain. 🥹❤️
-   </p>
-
-   <div class="answer">
-     <h3>THE BEST THING ABOUT HAVING YOU IN MY LIFE</h3>
-     <p>
-       You make my life happier just by being in it.
-       With you, even the smallest moments feel special.
-     </p>
-   </div>
-
-   <div class="answer">
-     <h3>WHAT DESERVES TO BE CELEBRATED ABOUT YOU</h3>
-     <p>
-       Your beautiful heart, your smile, and the
-       wonderful person you are. You deserve to feel
-       loved every single day.
-     </p>
-   </div>
-
-   <div class="answer">
-     <h3>MY WISH FOR YOU THIS YEAR</h3>
-     <p>
-       A life full of joy, peace, good health, and dreams
-       coming true. And very soon, a beautiful new life
-       together as husband and wife. ❤️
-     </p>
-   </div>
-
-   <div class="answer">
-     <h3>THREE WORDS THAT MAKE YOU IRREPLACEABLE</h3>
-     <p style="font-size:23px;color:#b83260">
-       My home. My happiness. My forever.
-     </p>
-   </div>
-
-   <div class="wedding">
-     <div class="small" style="color:#ffe2eb">
-       OUR FOREVER IS GETTING CLOSER
-     </div>
-     <p>
-       February 10 ❤️💍<br>
-       My birthday girl today,<br>
-       my wife very soon.
-     </p>
-   </div>
-
-   <button onclick="
-     document.getElementById('surprise').style.display='block';
-     this.style.display='none';
-   ">Open One Last Surprise 💌</button>
-
-   <div id="surprise">
-     If I could make one birthday wish come true,
-     it would be to give you a lifetime of reasons
-     to feel loved. ❤️
-     <br><br>
-     Very soon, my jaan, I'll hold you close and
-     begin our forever.
-     <br><br>
-     Happy Birthday, My Queen! 👑💋
-     <br>
-     I LOVE YOU SO MUCH. ❤️♾️
-   </div>
- </div>
-
- <footer>
-   Made with all my love, just for you. ❤️<br>
-   Today, tomorrow, and always. ♾️
- </footer>
+<div class="hearts" aria-hidden="true">
+  <span>♥</span>
+  <span>♡</span>
+  <span>♥</span>
+  <span>♡</span>
+  <span>♥</span>
+  <span>♡</span>
 </div>
 
-<script>
-const symbols=["♡","♥","💕"];
-for(let i=0;i<14;i++){
- const el=document.createElement("div");
- el.className="heart";
- el.textContent=symbols[i%symbols.length];
- el.style.left=Math.random()*100+"%";
- el.style.animationDelay=Math.random()*9+"s";
- el.style.animationDuration=(8+Math.random()*7)+"s";
- el.style.fontSize=(18+Math.random()*17)+"px";
- document.body.appendChild(el);
-}
-</script>
+<main>
+
+  <h1>
+    Happy Birthday, My Love,<br>
+    My Queen &amp; My Forever ❤️👑💍
+  </h1>
+
+  <p class="subtitle">
+    Priyanka, you make my today beautiful,
+    my tomorrow hopeful, and my forever worth dreaming of. ❤️
+  </p>
+
+  <div class="photo-frame">
+    <img
+      src="PASTE_YOUR_PHOTO_BASE64_DATA_HERE"
+      alt="My beautiful queen Priyanka"
+    >
+  </div>
+
+  <div class="caption">
+    My beautiful queen, today and always. ❤️
+  </div>
+
+  <section class="message">
+
+    <p>My dearest Priyanka, ❤️</p>
+
+    <p>
+      Happy Birthday to the person who holds such a special
+      place in my heart. You bring a kind of happiness into my
+      life that words can never fully explain. Every little
+      thing about you makes you precious to me, and I feel
+      lucky to imagine a future with you.
+    </p>
+
+    <p>
+      On your special day, I wish you endless smiles, peace
+      in your heart, good health, and all the beautiful things
+      you deserve. Whenever life feels difficult, I hope you
+      remember that you are loved, valued, and always in my thoughts.
+    </p>
+
+    <p class="wedding-date">
+      February 10 — The day our forever begins. 💍❤️
+    </p>
+
+    <p>
+      May we keep choosing each other, supporting each other,
+      laughing together, and building a life full of love.
+      Today is your birthday, but having you in my life feels
+      like a gift to me, too.
+    </p>
+
+    <p>
+      I may not always find the perfect words, but my heart
+      will keep finding reasons to love you. I want to make
+      beautiful memories with you, stand beside you during
+      difficult days, and celebrate every little happiness
+      we share.
+    </p>
+
+    <p>
+      With all my love, today, tomorrow, and forever,
+    </p>
+
+    <p><strong>Yours always ❤️</strong></p>
+
+  </section>
+
+  <button
+    type="button"
+    onclick="
+      document.getElementById('surprise').style.display = 'block';
+      this.style.display = 'none';
+    "
+  >
+    Open One Last Surprise 💌
+  </button>
+
+  <section id="surprise">
+
+    <h2>My Today. My Tomorrow. My Forever. ❤️</h2>
+
+    <p>
+      If I could make one promise, it would be to keep trying
+      every day to make you feel loved, respected, and safe
+      with me. No matter what tomorrow brings, I want to face
+      it hand in hand with you.
+    </p>
+
+    <p>
+      You are not just a part of my life. You are someone
+      I want beside me as we build our future together.
+    </p>
+
+    <p>
+      <strong>
+        Happy Birthday, Priyanka.
+        You are my favourite part of this story. ❤️👑💍
+      </strong>
+    </p>
+
+    <p>Forever yours. ❤️</p>
+
+  </section>
+
+  <footer>
+    Made with love, especially for Priyanka ❤️
+  </footer>
+
+</main>
+
 </body>
 </html>
