@@ -1,289 +1,328 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Today, My Tomorrow, My Forever ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meri Sleeping Beauty ❤️🌙</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Georgia, "Times New Roman", serif;
-  color: #571a35;
-  background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7fa);
-  text-align: center;
-  overflow-x: hidden;
-}
+    body {
+      margin: 0;
+      padding: 25px 14px 45px;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      text-align: center;
+      color: #713653;
+      background: linear-gradient(145deg, #191932, #493052, #9a617e);
+      overflow-x: hidden;
+    }
 
-.hearts {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 25px 18px;
+      background: rgba(255, 245, 250, 0.96);
+      border-radius: 25px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      position: relative;
+      z-index: 1;
+    }
 
-.hearts span {
-  position: absolute;
-  bottom: -60px;
-  color: #ff5285;
-  opacity: 0.55;
-  font-size: 28px;
-  animation: floatUp 12s linear infinite;
-}
+    h1 {
+      color: #b34478;
+      font-size: clamp(28px, 6vw, 42px);
+      margin: 10px 0;
+    }
 
-.hearts span:nth-child(1) { left: 8%; }
-.hearts span:nth-child(2) { left: 24%; animation-delay: 3s; }
-.hearts span:nth-child(3) { left: 45%; animation-delay: 6s; }
-.hearts span:nth-child(4) { left: 65%; animation-delay: 1s; }
-.hearts span:nth-child(5) { left: 82%; animation-delay: 4s; }
-.hearts span:nth-child(6) { left: 94%; animation-delay: 7s; }
+    .subtitle {
+      color: #8e5272;
+      font-size: 17px;
+    }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
-  }
-  15% { opacity: 0.55; }
-  100% {
-    transform: translateY(-115vh) rotate(35deg);
-    opacity: 0;
-  }
-}
+    .moon {
+      font-size: 48px;
+      margin: 5px;
+    }
 
-main {
-  position: relative;
-  z-index: 1;
-  width: min(900px, 92%);
-  margin: auto;
-  padding: 38px 0 45px;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      margin: 28px auto;
+    }
 
-h1 {
-  color: #8d1749;
-  font-size: clamp(2rem, 7vw, 4rem);
-  line-height: 1.2;
-  margin: 20px 0;
-}
+    .photo-card {
+      background: white;
+      padding: 8px;
+      border-radius: 17px;
+      box-shadow: 0 5px 18px rgba(155, 66, 111, 0.18);
+      transform: rotate(-1deg);
+    }
 
-.subtitle {
-  max-width: 700px;
-  margin: 0 auto 24px;
-  font-size: clamp(1.05rem, 3vw, 1.3rem);
-  line-height: 1.8;
-}
+    .photo-card:nth-child(2) {
+      transform: rotate(1deg);
+    }
 
-.photo-frame {
-  width: min(340px, 85vw);
-  margin: 28px auto;
-  padding: 9px;
-  border-radius: 25px;
-  background: linear-gradient(135deg, white, #ffb6ce, white);
-  box-shadow: 0 12px 35px rgba(151, 27, 76, 0.2);
-  transform: rotate(-1deg);
-}
+    .photo-card:nth-child(3) {
+      transform: rotate(-0.5deg);
+    }
 
-.photo-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
-  border-radius: 18px;
-}
+    .photo-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
 
-.caption {
-  margin-top: 15px;
-  font-style: italic;
-  font-size: 1.15rem;
-  color: #a52d5d;
-}
+    .photo-caption {
+      font-size: 13px;
+      font-weight: bold;
+      color: #b34478;
+      margin: 10px 2px 5px;
+    }
 
-.message {
-  max-width: 760px;
-  margin: 30px auto;
-  padding: clamp(22px, 5vw, 40px);
-  text-align: left;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid #ffd0df;
-  border-radius: 22px;
-  box-shadow: 0 8px 30px rgba(151, 27, 76, 0.08);
-  font-size: 1.08rem;
-  line-height: 1.9;
-}
+    .love-note {
+      margin: 25px auto;
+      padding: 22px 17px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ffe1ed, #fff5fa);
+      line-height: 1.9;
+      font-size: 17px;
+    }
 
-.message p {
-  margin: 0 0 17px;
-}
+    .love-note p {
+      margin: 13px 0;
+    }
 
-.message p:last-child {
-  margin-bottom: 0;
-}
+    .highlight {
+      color: #b52d70;
+      font-weight: bold;
+      font-size: 19px;
+    }
 
-.wedding-date {
-  text-align: center;
-  color: #a21e55;
-  font-weight: bold;
-  font-size: 1.15rem;
-}
+    .button {
+      display: inline-block;
+      border: none;
+      border-radius: 30px;
+      padding: 13px 23px;
+      margin: 10px 0;
+      color: white;
+      background: #b34478;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 14px rgba(179, 68, 120, 0.22);
+    }
 
-button {
-  border: none;
-  border-radius: 50px;
-  padding: 15px 26px;
-  margin: 12px 0;
-  background: linear-gradient(135deg, #ff6495, #c52565);
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 7px 20px rgba(197, 37, 101, 0.25);
-  transition: transform 0.2s;
-}
+    .button:hover {
+      background: #92305f;
+    }
 
-button:hover {
-  transform: translateY(-3px);
-}
+    #secretMessage {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 18px;
+      background: #fff;
+      line-height: 1.9;
+      animation: fadeIn 0.7s ease;
+    }
 
-#surprise {
-  display: none;
-  max-width: 720px;
-  margin: 25px auto;
-  padding: 25px;
-  background: white;
-  border: 1px solid #ffd0df;
-  border-radius: 22px;
-  line-height: 1.9;
-  box-shadow: 0 8px 25px rgba(151, 27, 76, 0.1);
-}
+    .signature {
+      margin-top: 25px;
+      color: #b34478;
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-#surprise h2 {
-  color: #a21e55;
-}
+    .star {
+      position: fixed;
+      top: -30px;
+      pointer-events: none;
+      z-index: 0;
+      animation: fall linear forwards;
+    }
 
-footer {
-  margin-top: 35px;
-  color: #98516e;
-  font-size: 0.95rem;
-}
-</style>
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px 8px 30px;
+      }
+
+      .container {
+        padding: 20px 11px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 360px;
+      }
+
+      .photo-card img {
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        background: #fcebf3;
+      }
+
+      .photo-caption {
+        font-size: 14px;
+      }
+
+      .love-note {
+        padding: 19px 13px;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="hearts" aria-hidden="true">
-  <span>♥</span>
-  <span>♡</span>
-  <span>♥</span>
-  <span>♡</span>
-  <span>♥</span>
-  <span>♡</span>
-</div>
+  <main class="container">
 
-<main>
+    <div class="moon">🌙✨</div>
 
-  <h1>
-    Happy Birthday, My Love,<br>
-    My Queen &amp; My Forever ❤️👑💍
-  </h1>
+    <h1>Meri Sleeping Beauty ❤️</h1>
 
-  <p class="subtitle"></p>
-
-  <div class="photo-frame">
-    <img src="priyanka%20_angry.jpeg" alt="My beautiful queen Priyanka">
-  </div>
-
-  <div class="caption">
-    My beautiful queen, today and always. ❤️
-  </div>
-
-  <section class="message">
-
-    <p></p>
-
-    <p>
-      Happy Birthday to the person who holds such a special
-      place in my heart. You bring a kind of happiness into my
-      life that words can never fully explain. Every little
-      thing about you makes you precious to me, and I feel
-      lucky to imagine a future with you.
+    <p class="subtitle">aapko pata bhi hai aap kitni cute hain? 🥹💕
     </p>
 
-    <p>
-      On your special day, I wish you endless smiles, peace
-      in your heart, good health, and all the beautiful things
-      you deserve. Whenever life feels difficult, I hope you
-      remember that you are loved, valued, and always in my thoughts.
-    </p>
+    <div class="gallery">
 
-    <p class="wedding-date">
-      February 10 — The day our forever begins. 💍❤️
-    </p>
+      <div class="photo-card">
+        <img src="sleep1.jpeg" alt="Priyanka sleeping, photo 1">
+        <p class="photo-caption">Itni si pyaari meri jaan 🥹❤️</p>
+      </div>
 
-    <p>
-      May we keep choosing each other, supporting each other,
-      laughing together, and building a life full of love.
-      Today is your birthday, but having you in my life feels
-      like a gift to me, too.
-    </p>
+      <div class="photo-card">
+        <img src="sleep2.jpeg" alt="Priyanka sleeping, photo 2">
+        <p class="photo-caption">Meri nanhi si sleeping beauty 🌙💗</p>
+      </div>
 
-    <p>
-      I may not always find the perfect words, but my heart
-      will keep finding reasons to love you. I want to make
-      beautiful memories with you, stand beside you during
-      difficult days, and celebrate every little happiness
-      we share.
-    </p>
+      <div class="photo-card">
+        <img src="sleep3.jpeg" alt="Priyanka sleeping, photo 3">
+        <p class="photo-caption">Bas aise hi pyaari rahiye 🫶💕</p>
+      </div>
 
-    <p>
-      With all my love, today, tomorrow, and forever</p>
+    </div>
 
-    <p><strong>Yours always ❤️</strong></p>
+    <section class="love-note">
 
-  </section>
+      <p class="highlight">
+        Itna cute kaise lag sakti hain aap sote hue? 😭❤️
+      </p>
 
-  <button id="surpriseButton" type="button" onclick="
-      document.getElementById('surprise').style.display = 'block';
-      this.style.display = 'none';
-    ">
-    Open One Last Surprise 💌
-  </button>
+      <p>
+        Aapko aise sote hue dekhkar na, bas dil karta hai
+        ki abhi wahaan aa jaun… 🥹
+      </p>
 
-  <section id="surprise">
+      <p>
+        Aapko pyaar se hug karun, aapko apni baahon mein pakad kar
+        so jaun, aur raat bhar aapko pyaar karta rahun. 🤗❤️
+      </p>
 
-    <h2>My Today. My Tomorrow. My Forever. ❤️</h2>
+      <p>
+        Duniya ki saari tension ek taraf, aur aapko apne paas
+        sukoon se sota hua dekhna ek taraf. 🌙💖
+      </p>
 
-    <p>
-      If I could make one promise, it would be to keep trying
-      every day to make you feel loved, respected, and safe
-      with me. No matter what tomorrow brings, I want to face
-      it hand in hand with you.
-    </p>
+      <p>
+        Bas aapka haath pakad kar, aapko hug karke,
+        aapki saanson ki aahat sunte hue so jaane ka mann karta hai.
+        🥹🫶
+      </p>
 
-    <p>
-      You are not just a part of my life. You are someone
-      I want beside me as we build our future together.
-    </p>
+      <p></p>
 
-    <p>
-      <strong>
-        Happy Birthday, Priyanka.
-        You are my favourite part of this story. ❤️👑💍
-      </strong>
-    </p>
+      <p class="highlight"></p>
 
-    <p>Forever yours. ❤️</p>
+    </section>
 
-  </section>
+    <button class="button" onclick="showSecret()">
+      Ek aur baat sunengi? 🥹</button>
 
-  <footer></footer>
+    <section id="secretMessage">
 
-</main>
+      <h2 style="color:#b34478;">Bas aap aur main ❤️</h2>
 
+      <p>
+        Kabhi-kabhi sach mein mann karta hai ki saari dooriyan khatam
+        ho jaayein, main aapke paas baithun, aapko hug karun,
+        aur bina kuch kahe bas aapke saath waqt bitaun. 🫂💕
+      </p>
+
+      <p>
+        Aapko pyaar karun, aapki baatein sunun, aapko hansaun,
+        aur aapki marzi aur comfort ka khayal rakhte hue
+        aapke saath har pal ko special banaun. ❤️
+      </p>
+
+      <p>
+        Kyunki mere liye pyaar sirf paas hona nahi,
+        balki aapko safe, respected aur loved feel karwana bhi hai. 🥹
+      </p>
+
+      <p class="highlight">
+        Meri favourite jagah? Aapke paas. ❤️👑
+      </p>
+
+    </section>
+
+    <div class="signature"><br></div>
+
+  </main>
+
+  <script>
+    function showSecret() {
+      const message = document.getElementById("secretMessage");
+
+      message.style.display = "block";
+      message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      for (let i = 0; i < 24; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.textContent = ["❤️", "💕", "✨", "💗", "🌙"][
+          Math.floor(Math.random() * 5)
+        ];
+
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.fontSize = (16 + Math.random() * 18) + "px";
+        star.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(star);
+
+        setTimeout(() => star.remove(), 7500);
+      }
+    }
+  </script>
 
 
 
